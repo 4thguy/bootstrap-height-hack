@@ -25,8 +25,7 @@ $sizes: (
 			@include flex-wrap(wrap);
 			
 			& > [class*="col-"] {
-				@include flex-grow(0);
-				@include flex-shrink(0);
+				@include flex(none);
 				
 				@each $i, $sizeProp in $sizes {
 					@media (min-width: nth($sizeProp, 2)) {
@@ -55,7 +54,7 @@ $sizes: (
 	& .short-contents {	
 		@include display(flex);
 		@include flex-direction(column);
-		@include justify-content(space-around);
+		@include justify-content(initial);
 		
 		&.flex-start {
 			@include justify-content(flex-start);
